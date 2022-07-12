@@ -6,6 +6,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "rm -rf dist && vue-cli-service build --modern",
+    "build:qnet7": "VUE_APP_ROUTER_MODE=hash VUE_APP_PUBLIC_PATH=/elasticvue/ npm run build && rm -rf bundle.zip && zip -r bundle.zip dist/",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint",
