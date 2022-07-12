@@ -2,7 +2,15 @@ export const connection = {
   namespaced: true,
   state: {
     activeInstanceIdx: null,
-    instances: [],
+    instances: [
+      {
+        name: "Local ES",
+        username: "",
+        password: "",
+        status: "unknown",
+        uri: "/api/stat",
+      }
+    ],
     elasticsearchAdapter: null
   },
   mutations: {

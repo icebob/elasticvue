@@ -165,7 +165,11 @@ export class DefaultClient {
   }
 
   request (path, method, params) {
-    const url = new URL(this.host + path)
+    let host = this.host;
+    if (!host.startsWith("http")) {
+      host = window.location.origin + host;
+    }
+    const url = new URL(host + path)
 
     if (method === 'GET' && typeof params === 'object') {
       Object.keys(params).forEach(key => url.searchParams.append(key, params[key]))

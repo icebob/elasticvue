@@ -32,13 +32,14 @@ export const useTestConnection = () => {
 
   const validName = name => ((name && name.length > 0) || 'Invalid name')
   const validUri = uri => {
-    try {
-      // eslint-disable-next-line no-new
-      new URL(uri)
-      if (/^https?:\/\/.*/.test(uri)) return true
-    } catch (e) {
-    }
-    return 'Invalid uri'
+    return true;
+    // try {
+    //   // eslint-disable-next-line no-new
+    //   new URL(uri)
+    //   if (/^https?:\/\/.*/.test(uri)) return true
+    // } catch (e) {
+    // }
+    // return 'Invalid uri'
   }
 
   const resetElasticsearchHost = () => {
